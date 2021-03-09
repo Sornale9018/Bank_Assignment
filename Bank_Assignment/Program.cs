@@ -94,8 +94,10 @@ namespace Assignment_2
 
                                 case "change":
                                     {
-                                        //Account a2 = new Account(new Address());
-                                        //ourBank.AddAccount(2,a2);
+                                        Account a2 = new Account(new Address());
+
+                                        //ourBank.AddAccount(2)
+                                        ourBank.AddAccount(2, a2);
                                         break;
                                     }
                                 case "quit":
