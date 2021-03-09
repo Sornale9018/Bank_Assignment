@@ -616,7 +616,7 @@ namespace Assignment_2
             Console.WriteLine("Change User Name");
             Console.WriteLine("Exit the application");
             Console.WriteLine("\n");
-            Console.WriteLine("Type 'deposit' to deposit amount\nType 'withdraw' to withdraw amount\nType 'transfer' to transfer amount/nType 'show' to Show the Number of Transaction & Balance/nType change to Change the User Name/nType quit to Exit from the System");
+            Console.WriteLine("Type 'deposit' to deposit amount\nType 'withdraw' to withdraw amount\nType 'transfer' to transfer amount\nType 'show' to Show the Number of Transaction & Balance\nType change to Change the User Name\nType quit to Exit from the System");
 
 
             Console.WriteLine("\n");
