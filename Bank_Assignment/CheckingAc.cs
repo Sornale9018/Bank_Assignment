@@ -13,20 +13,7 @@ namespace Assignment_2
 
         }
 
-        public override void Withdraw(double amount)
-        {
-            if (amount > 0 && amount <= balance)
-            {
-                Console.WriteLine("Previous Balance:	" + balance);
-                Console.WriteLine("Withdraw Amount:	" + amount);
-                balance -= amount;
-                Console.WriteLine("Current Balance:	" + balance);
-            }
-            else
-            {
-                Console.WriteLine("Can Not Withdraw");
-            }
-        }
+       
 
     }
 }

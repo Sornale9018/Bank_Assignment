@@ -10,7 +10,7 @@ namespace Assignment_2
     {
         static void Main(string[] args)
         {
-            Bank ourBank = new Bank("Mawa's Bank", 100);
+            Bank ourBank = new Bank("Developer's Bank", 100);
             Console.WriteLine("Welcome to the " + ourBank.BankName + "'s System");
 
             //Console.Write("Enter Your Choice");
