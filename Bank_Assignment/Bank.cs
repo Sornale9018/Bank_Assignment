@@ -575,6 +575,7 @@ namespace Assignment_2
             Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
             Console.WriteLine("1. Saving Account\n2. Checking Account");
             int actype = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\n");
             if (actype == 1)
             {
                 for (int i = 0; i < mysaving.Length; i++)
@@ -586,6 +587,7 @@ namespace Assignment_2
                     mysaving[i].ShowAccountInformation();
                     mysaving[i].PrintAccountNumber();
                     Console.WriteLine("Number of Transaction: " + mysaving[i].count);
+                    Console.WriteLine("\n");
                 }
             }
 
@@ -601,6 +603,7 @@ namespace Assignment_2
                     mychecking[i].ShowAccountInformation();
                     mychecking[i].PrintAccountNumber();
                     Console.WriteLine("Number of Transaction: " + mychecking[i].count);
+                    Console.WriteLine("\n");
 
 
                 }
@@ -643,6 +646,7 @@ namespace Assignment_2
             Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
             Console.WriteLine("1. Saving Account\n2. Checking Account");
             int actype = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\n");
             if (actype == 1)
             {
                 for (int i = 0; i < mysaving.Length; i++)
@@ -678,6 +682,7 @@ namespace Assignment_2
                 {
                     Console.WriteLine("Enter the Account Number you want to Modify");
                     int accountnumber = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("\n");
 
                     if (mychecking[i].AccountNumber == accountnumber)
                     {
