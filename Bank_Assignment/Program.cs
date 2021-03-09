@@ -11,7 +11,13 @@ namespace Assignment_2
         static void Main(string[] args)
         {
             Bank ourBank = new Bank("Developer's Bank", 100);
+            Console.WriteLine("****************************************");
+            Console.WriteLine("\n");
             Console.WriteLine("Welcome to the " + ourBank.BankName + "'s System");
+            Console.WriteLine("\n");
+            Console.WriteLine("****************************************");
+                Console.WriteLine("\n");
+
 
             //Console.Write("Enter Your Choice");
 

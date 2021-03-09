@@ -407,6 +407,7 @@ namespace Assignment_2
 
                             Console.WriteLine("Enter The Account Number Where you want to Transfer");
                             int accountTNum = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\n");
 
 
                             //if (accountNum == mysaving[i].AccountNumber || accountTNum == mysaving[j].AccountNumber)
@@ -431,6 +432,7 @@ namespace Assignment_2
                                         mysaving[i].count++;
                                         mychecking[j].count++;
                                         Console.WriteLine("Transfered");
+                                        Console.WriteLine("\n");
                                         flag = 0;
                                         //break;
                                     }
@@ -614,7 +616,7 @@ namespace Assignment_2
             Console.WriteLine("Change User Name");
             Console.WriteLine("Exit the application");
             Console.WriteLine("\n");
-            Console.WriteLine("Type 'deposit' to deposit amount, Type 'withdraw' to withdraw amount,Type 'transfer' to transfer amount,Type 'show' to Show the Number of Transaction & Balance,Type change to Change the User Name, Type quit to Exit from the System");
+            Console.WriteLine("Type 'deposit' to deposit amount\nType 'withdraw' to withdraw amount\nType 'transfer' to transfer amount/nType 'show' to Show the Number of Transaction & Balance/nType change to Change the User Name/nType quit to Exit from the System");
 
 
             Console.WriteLine("\n");
@@ -629,7 +631,7 @@ namespace Assignment_2
             Console.WriteLine("2. Perform Transaction for an Account");
             Console.WriteLine("3. Exit the application ");
             Console.WriteLine("\n");
-            Console.WriteLine("Type open to create an Account, Type account to perform Operation on Account, Type quit to Exit from the System");
+            Console.WriteLine("Type open to create an Account\nType account to perform Operation on Account\nType quit to Exit from the System");
 
             Console.WriteLine("\n");
 
@@ -647,13 +649,16 @@ namespace Assignment_2
                 {
                     Console.WriteLine("Enter the Account Number you want to Modify");
                     int accountnumber = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("\n");
 
                     if (mysaving[i].AccountNumber == accountnumber)
                     {
                         Console.WriteLine("Your User Name is" + mysaving[i].AccountName);
+                        Console.WriteLine("\n");
                         Console.WriteLine("Enter the New User Name ");
                         string changeName = Console.ReadLine();
                         mysaving[i].AccountName = changeName;
+                        Console.WriteLine("\n");
 
                         if (mysaving[i].AccountName == changeName)
                         {
@@ -677,9 +682,11 @@ namespace Assignment_2
                     if (mychecking[i].AccountNumber == accountnumber)
                     {
                         Console.WriteLine("Your User Name is" + mychecking[i].AccountName);
+                        Console.WriteLine("\n");
                         Console.WriteLine("Enter the New User Name ");
                         string changeName = Console.ReadLine();
                         mychecking[i].AccountName = changeName;
+                        Console.WriteLine("\n");
 
                         if (mychecking[i].AccountName == changeName)
                         {
@@ -706,7 +713,7 @@ namespace Assignment_2
             Console.WriteLine("2. Open A Checking Account");
             Console.WriteLine("3. Exit the application ");
             Console.WriteLine("\n");
-            Console.WriteLine("Type savings to create a Savings Account, Type checking to create a Checking Account, Type quit to Exit from the System");
+            Console.WriteLine("Type savings to create a Savings Account\nType checking to create a Checking Account\nType quit to Exit from the System");
 
             Console.WriteLine("\n");
 
