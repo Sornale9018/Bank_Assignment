@@ -146,19 +146,20 @@ namespace Assignment_2
         {
             Account a2 = new Account();
 
-            if (s == 2)
+            if (s == 2)  //withdraw
             {
 
 
-                for (int i = 0; i <= mysaving.Length; i++)
-                {
-                    Console.WriteLine("Enter Your Account Number to Withdraw");
-                    int accountNum = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
-                    Console.WriteLine("1. Saving Account\n2. Checking Account");
 
-                    int actype = Convert.ToInt32(Console.ReadLine());
-                    if (actype == 1)
+                Console.WriteLine("Enter Your Account Number to Withdraw");
+                int accountNum = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
+                Console.WriteLine("1. Saving Account\n2. Checking Account");
+
+                int actype = Convert.ToInt32(Console.ReadLine());
+                if (actype == 1)
+                {
+                    for (int i = 0; i <= mysaving.Length; i++)
                     {
                         if (accountNum == mysaving[i].AccountNumber)
                         {
@@ -189,8 +190,10 @@ namespace Assignment_2
 
                         }
                     }
-
-                    else if (actype == 2)
+                }
+                else if (actype == 2)
+                {
+                    for (int i = 0; i <= mychecking.Length; i++)
                     {
                         if (accountNum == mychecking[i].AccountNumber)
                         {
@@ -225,7 +228,6 @@ namespace Assignment_2
                     }
                     //break;
                 }
-
             }
 
 
@@ -235,15 +237,16 @@ namespace Assignment_2
                 //Console.WriteLine("Enter Your Account Number to Deposit");
                 //int accountNum = Convert.ToInt32(Console.ReadLine());
 
-                for (int i = 0; i <= mysaving.Length; i++)
-                {
-                    Console.WriteLine("Enter Your Account Number to Deposit");
-                    int accountNum = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
-                    Console.WriteLine("1. Saving Account\n2. Checking Account");
 
-                    int actype = Convert.ToInt32(Console.ReadLine());
-                    if (actype == 1)
+                Console.WriteLine("Enter Your Account Number to Deposit");
+                int accountNum = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
+                Console.WriteLine("1. Saving Account\n2. Checking Account");
+
+                int actype = Convert.ToInt32(Console.ReadLine());
+                if (actype == 1)
+                {
+                    for (int i = 0; i < mysaving.Length; i++)
                     {
                         if (accountNum == mysaving[i].AccountNumber)
                         {
@@ -267,6 +270,7 @@ namespace Assignment_2
 
                                 else
                                 {
+                                    Console.WriteLine("Account Not Found");
                                     flag = 1;
                                 }
 
@@ -274,8 +278,11 @@ namespace Assignment_2
 
                         }
                     }
+                }
 
-                    else if (actype == 2)
+                else if (actype == 2)
+                {
+                    for (int i = 0; i < mychecking.Length; i++)
                     {
                         if (accountNum == mychecking[i].AccountNumber)
                         {
@@ -299,6 +306,7 @@ namespace Assignment_2
 
                                 else
                                 {
+                                    Console.WriteLine("Account Not Found");
                                     flag = 1;
                                 }
 
@@ -309,56 +317,121 @@ namespace Assignment_2
 
                     }
                     //break;
+
+
+                    //for (int i = 0; i <= mychecking.Length; i++)
+                    //{
+
+                    //break;
+                    //}
+
                 }
-
-                //for (int i = 0; i <= mychecking.Length; i++)
-                //{
-
-                //break;
-                //}
-
-
             }
 
             else if (s == 3)
             {
 
-                for (int i = 0; i <= myBank.Length; i++)
+
+                Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
+                Console.WriteLine("1. Saving Account\n2. Checking Account");
+                int actype = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter The Account Type Where you want to Transfer: (Enter 1 or 2)");
+                Console.WriteLine("1. Saving Account\n2. Checking Account");
+                int acctype = Convert.ToInt32(Console.ReadLine());
+
+                if (actype == 1 && acctype == 1)
                 {
-                    for (int j = 0; j <= MyBank.Length; j++)
+                    for (int i = 0; i < mysaving.Length; i++)
                     {
-                        Console.WriteLine("Enter Your Account Number");
-                        int accountNum = Convert.ToInt32(Console.ReadLine());
-
-                        Console.WriteLine("Enter The Account Number Where you want to Transfer");
-                        int accountTNum = Convert.ToInt32(Console.ReadLine());
-
-
-                        if (accountNum == myBank[i].AccountNumber || accountTNum == MyBank[j].AccountNumber)
+                        for (int j = 0; j < mysaving.Length; j++)
                         {
+                            Console.WriteLine("Enter Your Account Number");
+                            int accountNum = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Enter The Account Number Where you want to Transfer");
+                            int accountTNum = Convert.ToInt32(Console.ReadLine());
+
+
+                            //if (accountNum == mysaving[i].AccountNumber || accountTNum == mysaving[j].AccountNumber)
+                            //{
                             int flag = 0;
-                            for (i = 0; i < myBank.Length; i++)
+                            for (i = 0; i < mysaving.Length; i++)
                             {
-                                for (j = 0; j < myBank.Length; j++)
-                                    if (myBank[i] == null || myBank[j] == null)
+                                for (j = 0; j < mysaving.Length; j++)
+                                    if (mysaving[i] == null || mysaving[j] == null)
                                     {
                                         continue;
                                     }
 
-                                    else if (myBank[i].AccountNumber == accountNum && myBank[j].AccountNumber == accountTNum)
+                                    else if (mysaving[i].AccountNumber == accountNum && mysaving[j].AccountNumber == accountTNum)
                                     {
                                         Console.WriteLine("Enter The Amount You want to Deposit: ");
 
                                         double x = Convert.ToDouble(Console.ReadLine());
-                                        myBank[i].Withdraw(x);
-                                        myBank[j].Deposit(x);
-                                        myBank[i].count++;
+                                        mysaving[i].Withdraw(x);
+                                        mysaving[j].Deposit(x);
+                                        mysaving[i].count++;
                                         Console.WriteLine("Deposited");
                                         flag = 0;
                                         //break;
                                     }
                                     else
                                     {
+                                        Console.WriteLine("Account not found");
+                                        flag = 1;
+                                    }
+
+                            }
+
+                            //break;
+                        }
+                    }
+
+                }
+
+                else if (actype == 1 && acctype == 2)
+
+                {
+
+                    for (int i = 0; i < mysaving.Length; i++)
+                    {
+                        for (int j = 0; j < mychecking.Length; j++)
+                        {
+                            Console.WriteLine("Enter Your Account Number");
+                            int accountNum = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Enter The Account Number Where you want to Transfer");
+                            int accountTNum = Convert.ToInt32(Console.ReadLine());
+
+
+                            //if (accountNum == mysaving[i].AccountNumber || accountTNum == mysaving[j].AccountNumber)
+                            //{
+                            int flag = 0;
+                            for (i = 0; i < mysaving.Length; i++)
+                            {
+                                for (j = 0; j < mychecking.Length; j++)
+                                    if (mysaving[i] == null || mychecking[j] == null)
+                                    {
+                                        continue;
+                                    }
+
+                                    else if (mysaving[i].AccountNumber == accountNum && mychecking[j].AccountNumber == accountTNum)
+                                    {
+                                        Console.WriteLine("Enter The Amount You want to Deposit: ");
+
+                                        double x = Convert.ToDouble(Console.ReadLine());
+                                        mysaving[i].Withdraw(x);
+                                        mychecking[j].Deposit(x);
+                                        mysaving[i].count++;
+                                        mychecking[j].count++;
+                                        Console.WriteLine("Deposited");
+                                        flag = 0;
+                                        //break;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Account Not Found");
                                         flag = 1;
                                     }
 
@@ -368,12 +441,132 @@ namespace Assignment_2
                                 Console.WriteLine("Account not found");
                                 // Console.WriteLine("Exit the System & Try Again");
                             }
+                            // }
+
+
+                            //break;
                         }
-
-
-                        //break;
                     }
+
+
+
                 }
+
+
+                else if (actype == 2 && acctype == 1)
+                {
+
+                    for (int i = 0; i < mychecking.Length; i++)
+                    {
+                        for (int j = 0; j < mysaving.Length; j++)
+                        {
+                            Console.WriteLine("Enter Your Account Number");
+                            int accountNum = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Enter The Account Number Where you want to Transfer");
+                            int accountTNum = Convert.ToInt32(Console.ReadLine());
+
+
+                            //if (accountNum == mysaving[i].AccountNumber || accountTNum == mysaving[j].AccountNumber)
+                            //{
+                            int flag = 0;
+                            for (i = 0; i < mychecking.Length; i++)
+                            {
+                                for (j = 0; j < mysaving.Length; j++)
+                                    if (mychecking[i] == null || mysaving[j] == null)
+                                    {
+                                        continue;
+                                    }
+
+                                    else if (mychecking[i].AccountNumber == accountNum && mysaving[j].AccountNumber == accountTNum)
+                                    {
+                                        Console.WriteLine("Enter The Amount You want to Deposit: ");
+
+                                        double x = Convert.ToDouble(Console.ReadLine());
+                                        mychecking[i].Withdraw(x);
+                                        mysaving[j].Deposit(x);
+                                        mychecking[i].count++;
+                                        mysaving[j].count++;
+                                        Console.WriteLine("Balance Transfered...");
+                                        flag = 0;
+                                        //break;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Account Not Found");
+                                        flag = 1;
+                                    }
+
+                            }
+                            if (flag == 1)
+                            {
+                                Console.WriteLine("Account not found");
+                                // Console.WriteLine("Exit the System & Try Again");
+                            }
+                            // }
+
+
+                            //break;
+                        }
+                    }
+
+
+                }
+
+                else if (actype == 2 && acctype == 2)
+                {
+                    for (int i = 0; i < mychecking.Length; i++)
+                    {
+                        for (int j = 0; j < mychecking.Length; j++)
+                        {
+                            Console.WriteLine("Enter Your Account Number");
+                            int accountNum = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Enter The Account Number Where you want to Transfer");
+                            int accountTNum = Convert.ToInt32(Console.ReadLine());
+
+
+                            //if (accountNum == mysaving[i].AccountNumber || accountTNum == mysaving[j].AccountNumber)
+                            //{
+                            int flag = 0;
+                            for (i = 0; i < mychecking.Length; i++)
+                            {
+                                for (j = 0; j < mychecking.Length; j++)
+                                    if (mychecking[i] == null || mychecking[j] == null)
+                                    {
+                                        continue;
+                                    }
+
+                                    else if (mychecking[i].AccountNumber == accountNum && mychecking[j].AccountNumber == accountTNum)
+                                    {
+                                        Console.WriteLine("Enter The Amount You want to Transfer: ");
+
+                                        double x = Convert.ToDouble(Console.ReadLine());
+                                        mychecking[i].Withdraw(x);
+                                        Console.WriteLine("Amount Transferred.....!!!");
+                                        Console.WriteLine(mychecking[i].AccountNumber);
+                                        mychecking[j].Deposit(x);
+                                        mychecking[i].count++;
+                                        mychecking[j].count++;
+                                        Console.WriteLine("Balance Transfered...");
+                                        flag = 0;
+                                        //break;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Failed to Transfer....try Again");
+                                        flag = 1;
+                                    }
+
+                            }
+                            //break;
+                        }
+                    }
+
+
+                }
+
+
             }
 
 
@@ -383,18 +576,40 @@ namespace Assignment_2
 
         public void PrintAllAccount()
         {
-            for (int i = 0; i < myBank.Length; i++)
+            Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
+            Console.WriteLine("1. Saving Account\n2. Checking Account");
+            int actype = Convert.ToInt32(Console.ReadLine());
+            if (actype == 1)
             {
-                if (myBank[i] == null)
+                for (int i = 0; i < mysaving.Length; i++)
                 {
-                    continue;
+                    if (mysaving[i] == null)
+                    {
+                        continue;
+                    }
+                    mysaving[i].ShowAccountInformation();
+                    mysaving[i].PrintAccountNumber();
+                    Console.WriteLine("Number of Transaction: " + mysaving[i].count);
                 }
-                myBank[i].ShowAccountInformation();
-                myBank[i].PrintAccountNumber();
-                Console.WriteLine("Number of Transaction: " + myBank[i].count);
+            }
+
+            else if (actype == 2)
+            {
+
+                for (int i = 0; i < mychecking.Length; i++)
+                {
+                    if (mychecking[i] == null)
+                    {
+                        continue;
+                    }
+                    mychecking[i].ShowAccountInformation();
+                    mychecking[i].PrintAccountNumber();
+                    Console.WriteLine("Number of Transaction: " + mychecking[i].count);
+
+
+                }
             }
         }
-
         public void Operations()
         {
             Console.WriteLine("Choose Service from the Below Option");
@@ -404,8 +619,8 @@ namespace Assignment_2
             Console.WriteLine("Show the number of transactions & balance");
             Console.WriteLine("Change User Name");
             Console.WriteLine("Exit the application");
-            Console.WriteLine("/n");
-            Console.WriteLine("Type deposit to deposit amount, Type withdraw to withdraw amount,Type transfer to transfer amount,Type show to Show the Number of Transaction & Balance,Type change to Change the User Name, Type quit to Exit from the System");
+            Console.WriteLine("\n");
+            Console.WriteLine("Type 'deposit' to deposit amount, Type 'withdraw' to withdraw amount,Type 'transfer' to transfer amount,Type 'show' to Show the Number of Transaction & Balance,Type change to Change the User Name, Type quit to Exit from the System");
 
 
             Console.WriteLine("\n");
@@ -429,29 +644,64 @@ namespace Assignment_2
 
         public void AddAccount(int a, Account account)
         {
-            for (int i = 0; i < myBank.Length; i++)
+            Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
+            Console.WriteLine("1. Saving Account\n2. Checking Account");
+            int actype = Convert.ToInt32(Console.ReadLine());
+            if (actype == 1)
             {
-                Console.WriteLine("Enter the Account Number you want to Modify");
-                int accountnumber = Convert.ToInt32(Console.ReadLine());
-
-                if (myBank[i].AccountNumber == accountnumber)
+                for (int i = 0; i < mysaving.Length; i++)
                 {
-                    Console.WriteLine("Your User Name is" + myBank[i].AccountName);
-                    Console.WriteLine("Enter the New User Name ");
-                    string changeName = Console.ReadLine();
-                    myBank[i].AccountName = changeName;
+                    Console.WriteLine("Enter the Account Number you want to Modify");
+                    int accountnumber = Convert.ToInt32(Console.ReadLine());
 
-                    if (myBank[i].AccountName == changeName)
+                    if (mysaving[i].AccountNumber == accountnumber)
                     {
-                        Console.WriteLine("Account Name Changed ");
+                        Console.WriteLine("Your User Name is" + mysaving[i].AccountName);
+                        Console.WriteLine("Enter the New User Name ");
+                        string changeName = Console.ReadLine();
+                        mysaving[i].AccountName = changeName;
+
+                        if (mysaving[i].AccountName == changeName)
+                        {
+                            Console.WriteLine("Account Name Changed ");
+                        }
+                        else { Console.WriteLine("Try Again"); }
+
+
                     }
-                    else { Console.WriteLine("Try Again"); }
-
-
+                    break;
                 }
-                break;
+            }
+
+            else if (actype == 2)
+            {
+                for (int i = 0; i < mychecking.Length; i++)
+                {
+                    Console.WriteLine("Enter the Account Number you want to Modify");
+                    int accountnumber = Convert.ToInt32(Console.ReadLine());
+
+                    if (mychecking[i].AccountNumber == accountnumber)
+                    {
+                        Console.WriteLine("Your User Name is" + mychecking[i].AccountName);
+                        Console.WriteLine("Enter the New User Name ");
+                        string changeName = Console.ReadLine();
+                        mychecking[i].AccountName = changeName;
+
+                        if (mychecking[i].AccountName == changeName)
+                        {
+                            Console.WriteLine("Account Name Changed ");
+                        }
+                        else { Console.WriteLine("Try Again"); }
+
+
+                    }
+                    break;
+                }
+
             }
         }
+
+
 
 
 
@@ -469,4 +719,6 @@ namespace Assignment_2
         }
 
     }
+
 }
+
