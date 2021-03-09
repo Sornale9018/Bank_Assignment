@@ -36,7 +36,7 @@ namespace Assignment_2
 
         public void AddAccount(SavingsAc account)
         {
-            for (int i = 0; i < myBank.Length; i++)
+            for (int i = 0; i < mysaving.Length; i++)
             {
                 if (mysaving[i] == null)
                 {
@@ -79,7 +79,7 @@ namespace Assignment_2
 
         public void AddAccount(CheckingAc account)
         {
-            for (int i = 0; i < myBank.Length; i++)
+            for (int i = 0; i < mychecking.Length; i++)
             {
                 if (mychecking[i] == null)
                 {
@@ -142,7 +142,7 @@ namespace Assignment_2
         }
 
 
-        public void Transaction(int s, params int[] ab)
+        public void Transaction(int s)
         {
             Account a2 = new Account();
 
@@ -366,13 +366,14 @@ namespace Assignment_2
 
                                     else if (mysaving[i].AccountNumber == accountNum && mysaving[j].AccountNumber == accountTNum)
                                     {
-                                        Console.WriteLine("Enter The Amount You want to Deposit: ");
+                                        Console.WriteLine("Enter The Amount You want to Transfer: ");
 
                                         double x = Convert.ToDouble(Console.ReadLine());
                                         mysaving[i].Withdraw(x);
+                                        Console.WriteLine("\n");
                                         mysaving[j].Deposit(x);
                                         mysaving[i].count++;
-                                        Console.WriteLine("Deposited");
+                                        Console.WriteLine("Transfered");
                                         flag = 0;
                                         //break;
                                     }
@@ -418,14 +419,15 @@ namespace Assignment_2
 
                                     else if (mysaving[i].AccountNumber == accountNum && mychecking[j].AccountNumber == accountTNum)
                                     {
-                                        Console.WriteLine("Enter The Amount You want to Deposit: ");
+                                        Console.WriteLine("Enter The Amount You want to Transfer: ");
 
                                         double x = Convert.ToDouble(Console.ReadLine());
                                         mysaving[i].Withdraw(x);
+                                        Console.WriteLine("\n");
                                         mychecking[j].Deposit(x);
                                         mysaving[i].count++;
                                         mychecking[j].count++;
-                                        Console.WriteLine("Deposited");
+                                        Console.WriteLine("Transfered");
                                         flag = 0;
                                         //break;
                                     }
@@ -436,15 +438,10 @@ namespace Assignment_2
                                     }
 
                             }
-                            if (flag == 1)
-                            {
-                                Console.WriteLine("Account not found");
-                                // Console.WriteLine("Exit the System & Try Again");
-                            }
-                            // }
+                            
 
 
-                            //break;
+                            
                         }
                     }
 
@@ -480,14 +477,15 @@ namespace Assignment_2
 
                                     else if (mychecking[i].AccountNumber == accountNum && mysaving[j].AccountNumber == accountTNum)
                                     {
-                                        Console.WriteLine("Enter The Amount You want to Deposit: ");
+                                        Console.WriteLine("Enter The Amount You want to Transfer: ");
 
                                         double x = Convert.ToDouble(Console.ReadLine());
                                         mychecking[i].Withdraw(x);
+                                        Console.WriteLine("\n");
                                         mysaving[j].Deposit(x);
                                         mychecking[i].count++;
                                         mysaving[j].count++;
-                                        Console.WriteLine("Balance Transfered...");
+                                        Console.WriteLine("Transfered");
                                         flag = 0;
                                         //break;
                                     }
@@ -498,15 +496,7 @@ namespace Assignment_2
                                     }
 
                             }
-                            if (flag == 1)
-                            {
-                                Console.WriteLine("Account not found");
-                                // Console.WriteLine("Exit the System & Try Again");
-                            }
-                            // }
-
-
-                            //break;
+                            
                         }
                     }
 
@@ -543,12 +533,13 @@ namespace Assignment_2
 
                                         double x = Convert.ToDouble(Console.ReadLine());
                                         mychecking[i].Withdraw(x);
-                                        Console.WriteLine("Amount Transferred.....!!!");
+                                        Console.WriteLine("\n");
+                                        
                                         Console.WriteLine(mychecking[i].AccountNumber);
                                         mychecking[j].Deposit(x);
                                         mychecking[i].count++;
                                         mychecking[j].count++;
-                                        Console.WriteLine("Balance Transfered...");
+                                        Console.WriteLine("Transfered");
                                         flag = 0;
                                         //break;
                                     }
@@ -559,7 +550,7 @@ namespace Assignment_2
                                     }
 
                             }
-                            //break;
+                            
                         }
                     }
 

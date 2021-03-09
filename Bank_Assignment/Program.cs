@@ -52,9 +52,7 @@ namespace Assignment_2
 
                             }
                         }
-                        // Account a2 = new Account(new Address());
-                        //SavingsAc a1 = new SavingsAc(new Address());
-                        //ourBank.AddAccount(a1);
+                       
                         break;
 
                     case "account":

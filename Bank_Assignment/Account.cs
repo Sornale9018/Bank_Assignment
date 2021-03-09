@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_2
 {
-    class Account
+     class Account
     {
         private int accountNumber;
         private string accountName;
