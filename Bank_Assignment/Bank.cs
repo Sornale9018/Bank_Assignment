@@ -132,6 +132,7 @@ namespace Assignment_2
                 {
                     myBank[i] = null;
                     Console.WriteLine("Congratulations!!! Your Account is successfully Deleted\n");
+                    Console.WriteLine("\n");
 
                     for (int j = i; j < myBank.Length - 1; j++)
                     {
@@ -177,6 +178,7 @@ namespace Assignment_2
                                     mysaving[i].Withdraw(x);
                                     mysaving[i].count++;
                                     Console.WriteLine("Amount Withdraw successful");
+                                    Console.WriteLine("\n");
                                     flag = 0;
                                     //break;
                                 }
@@ -211,6 +213,7 @@ namespace Assignment_2
                                     mychecking[i].Withdraw(x);
                                     mychecking[i].count++;
                                     Console.WriteLine("Account Had Withdraw");
+                                    Console.WriteLine("\n");
                                     flag = 0;
                                     //break;
                                 }
@@ -234,12 +237,12 @@ namespace Assignment_2
             else if (s == 1)  //deposit function
             {
 
-                //Console.WriteLine("Enter Your Account Number to Deposit");
-                //int accountNum = Convert.ToInt32(Console.ReadLine());
+               
 
 
                 Console.WriteLine("Enter Your Account Number to Deposit");
                 int accountNum = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("\n");
                 Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
                 Console.WriteLine("1. Saving Account\n2. Checking Account");
 
@@ -264,6 +267,7 @@ namespace Assignment_2
                                     mysaving[i].Deposit(x);
                                     mysaving[i].count++;
                                     Console.WriteLine("Deposited");
+                                    Console.WriteLine("\n");
                                     flag = 0;
                                     //break;
                                 }
@@ -300,6 +304,7 @@ namespace Assignment_2
                                     mychecking[i].Deposit(x);
                                     mychecking[i].count++;
                                     Console.WriteLine("Deposited");
+                                    Console.WriteLine("\n");
                                     flag = 0;
                                     //break;
                                 }
@@ -307,6 +312,7 @@ namespace Assignment_2
                                 else
                                 {
                                     Console.WriteLine("Account Not Found");
+                                    Console.WriteLine("\n");
                                     flag = 1;
                                 }
 
@@ -316,14 +322,7 @@ namespace Assignment_2
 
 
                     }
-                    //break;
-
-
-                    //for (int i = 0; i <= mychecking.Length; i++)
-                    //{
-
-                    //break;
-                    //}
+                   
 
                 }
             }
@@ -335,6 +334,7 @@ namespace Assignment_2
                 Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
                 Console.WriteLine("1. Saving Account\n2. Checking Account");
                 int actype = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("\n");
 
                 Console.WriteLine("Enter The Account Type Where you want to Transfer: (Enter 1 or 2)");
                 Console.WriteLine("1. Saving Account\n2. Checking Account");
@@ -348,9 +348,11 @@ namespace Assignment_2
                         {
                             Console.WriteLine("Enter Your Account Number");
                             int accountNum = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\n");
 
                             Console.WriteLine("Enter The Account Number Where you want to Transfer");
                             int accountTNum = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\n");
 
 
                             //if (accountNum == mysaving[i].AccountNumber || accountTNum == mysaving[j].AccountNumber)
@@ -374,6 +376,7 @@ namespace Assignment_2
                                         mysaving[j].Deposit(x);
                                         mysaving[i].count++;
                                         Console.WriteLine("Transfered");
+                                        Console.WriteLine("\n");
                                         flag = 0;
                                         //break;
                                     }
@@ -385,7 +388,7 @@ namespace Assignment_2
 
                             }
 
-                            //break;
+                            
                         }
                     }
 
@@ -633,7 +636,7 @@ namespace Assignment_2
         }
 
 
-        public void AddAccount(int a, Account account)
+        public void ChangeUserName(int a, Account account)
         {
             Console.WriteLine("Enter Your Account Type: (Enter 1 or 2)");
             Console.WriteLine("1. Saving Account\n2. Checking Account");
