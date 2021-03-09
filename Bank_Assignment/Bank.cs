@@ -67,7 +67,7 @@ namespace Assignment_2
                     Console.WriteLine("   Enter Your City: ");
                     account.Address.City = Console.ReadLine();
 
-                    Console.WriteLine("   Enter Your Country No.: ");
+                    Console.WriteLine("   Enter Your Country: ");
                     account.Address.Country = Console.ReadLine();
 
                     int x = mysaving[i].PrintAccountNumber();
